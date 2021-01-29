@@ -6,6 +6,8 @@ import {LayoutComponent} from './components/layout/layout.component';
 import {GroupComponent} from './components/layout/group/group.component';
 import {QuestionComponent} from './components/layout/question/question.component';
 import {ExamComponent} from './components/layout/exam/exam.component';
+import {createContentChildren} from '@angular/compiler/src/core';
+import {CreateUserComponent} from './components/layout/user/create-user/create-user.component';
 
 
 const routes: Routes = [
@@ -42,8 +44,14 @@ const routes: Routes = [
             }, {
                 path: 'user',
                 component: UserComponent,
-            },
+                children: [
+                    {
+                        path: 'create',
+                        component: CreateUserComponent
+                    }
 
+                ]
+            },
         ]
     },
 

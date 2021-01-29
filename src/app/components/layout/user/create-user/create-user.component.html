@@ -1,0 +1,29 @@
+<h3>Create Product</h3>
+<div [hidden]="submitted" style="width: 400px;">
+    <form [formGroup]="formCreate" (ngSubmit)="onSubmit()">
+        <!--    <div class="form-group">-->
+        <!--      <label for="id">Name</label>-->
+        <!--      <input type="text" class="form-control" id="id" required [(ngModel)]="product.id" name="id">-->
+        <!--    </div>-->
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control"  id="name" formControlName="name">
+            <small class="text-danger" *ngIf="formCreate.controls.name.errors?.required && formCreate.controls.name.touched">Name is required</small>
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="text" class="form-control" id="price" formControlName="price">
+            <small class="text-danger" *ngIf="formCreate.controls.price.errors?.required && formCreate.controls.price.touched">Price is required</small>
+            <small class="text-danger" *ngIf="formCreate.controls.price.errors?.price && formCreate.controls.price.touched">Price is only numbers</small>
+        </div>
+
+        <button  class="btn btn-success" [disabled]="formCreate.invalid">Submit</button>
+    </form>
+</div>
+
+<!--<div [hidden]="!submitted">-->
+<!--  <h4>You submitted successfully!</h4>-->
+<!--   <button class="btn btn-success" routerLink="/list" routerLinkActive="active">Back to Home</button>-->
+<!--</div>-->
+

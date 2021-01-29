@@ -29,6 +29,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import {MatSliderModule} from '@angular/material/slider';
+import { CreateUserComponent } from './components/layout/user/create-user/create-user.component';
+import {UserService} from './service/userService';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {MatSliderModule} from '@angular/material/slider';
     QuestionComponent,
     GroupComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,7 @@ import {MatSliderModule} from '@angular/material/slider';
     MatSliderModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
