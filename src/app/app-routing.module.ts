@@ -43,15 +43,12 @@ const routes: Routes = [
                 component: QuestionComponent,
             }, {
                 path: 'user',
-                component: UserComponent,
-                children: [
-                    {
-                        path: 'create',
-                        component: CreateUserComponent
-                    }
-
-                ]
+                component: UserComponent
             },
+            {
+                path: 'user/create',
+                component: CreateUserComponent
+            }
         ]
     },
 

@@ -31,6 +31,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {MatSliderModule} from '@angular/material/slider';
 import { CreateUserComponent } from './components/layout/user/create-user/create-user.component';
 import {UserService} from './service/userService';
+import { UserDetailComponent } from './components/layout/user/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {UserService} from './service/userService';
     GroupComponent,
     LoginComponent,
     RegisterComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

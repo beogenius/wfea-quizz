@@ -39,6 +39,6 @@ export class UserComponent implements OnInit {
         this.router.navigate(['detail',id]);
     }
     createUser(){
-        this.router.navigate(['create']);
+        this.router.navigateByUrl('/admin/user/create');
     }
 }
