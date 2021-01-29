@@ -14,10 +14,9 @@
         <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">Address</th>
-            <th scope="col">Age</th>
+            <th scope="col">Role</th>
             <th scope="col">Email</th>
-            <th scope="col">Username</th>
+            <th scope="col">User name</th>
             <th scope="col">Password</th>
             <th>Action</th>
         </tr>
@@ -25,8 +24,13 @@
         <tbody>
         <tr *ngFor="let u of userList">
             <th scope="row">{{u.id}}</th>
-            <td>{{u.address}}</td>
-            <td>{{u.age}}</td>
+            <td>
+                <ul *ngFor="let r of u.roles">
+                    <li>
+                        {{r.name}}
+                    </li>
+                </ul>
+            </td>
             <td>{{u.email}}</td>
             <td>{{u.username}}</td>
             <td>{{u.password}}</td>

@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class CreateUserComponent implements OnInit {
   user: User = new User();
   submitted = false;
-  formCreate?: FormGroup;
+  formCreate!: FormGroup;
   constructor(private userService: UserService,
               private router: Router,
               private formBuilder: FormBuilder) { }
@@ -27,6 +27,19 @@ export class CreateUserComponent implements OnInit {
       image: [''],
       appGroup_id: ['1']
     })
+  }
+  save(){
+    this.userService.createUser(this.formCreate.value).subscribe((data: any) => {
+          this.gotoList();
+        },
+        (error: any) => console.log(error));
+  }
+  onSubmit(){
+    this.submitted = true;
+    this.save();
+  }
+  gotoList(){
+    this.router.navigate(['user']);
   }
 
 }
