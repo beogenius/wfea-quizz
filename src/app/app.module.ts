@@ -29,6 +29,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {HttpClientModule} from '@angular/common/http';
 import {MatSliderModule} from '@angular/material/slider';
+import { CreateGroupComponent } from './components/layout/group/create-group/create-group.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {MatSliderModule} from '@angular/material/slider';
     QuestionComponent,
     GroupComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CreateGroupComponent
   ],
   imports: [
     BrowserModule,
