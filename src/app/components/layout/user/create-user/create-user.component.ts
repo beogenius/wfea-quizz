@@ -25,21 +25,23 @@ export class CreateUserComponent implements OnInit {
       dob: ['',[Validators.required,Validators.pattern('(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})')]],
       email: ['',[Validators.required,Validators.pattern('[^@ \\t\\r\\n]+@[^@ \\t\\r\\n]+\\.[^@ \\t\\r\\n]+')]],
       image: [''],
-      appGroup_id: ['1']
+      // appGroup_id: ['1']
     })
   }
   save(){
-    this.userService.createUser(this.formCreate.value).subscribe((data: any) => {
-          this.gotoList();
+    this.userService.createUser(this.formCreate.value).subscribe(data => {
+          // @ts-ignore
+          this.formCreate.value = data.data
         },
         (error: any) => console.log(error));
   }
   onSubmit(){
     this.submitted = true;
     this.save();
+    this.router.navigateByUrl('admin/user')
   }
-  gotoList(){
-    this.router.navigate(['user']);
-  }
+  // gotoList(){
+  //   this.router.navigateByUrl('admin/user');
+  // }
 
 }

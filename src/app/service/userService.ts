@@ -12,7 +12,7 @@ export class UserService{
     constructor(private http: HttpClient) {
     }
     getUser(id: number): Observable<any>{
-        return this.http.get(this.baseUrl + '/product?id=' + id);
+        return this.http.get(this.baseUrl + '/user?id=' + id);
     }
 
     getUserList(): Observable<any>{
@@ -24,7 +24,7 @@ export class UserService{
     deleteUser(id: number):Observable<any>{
         return this.http.delete(this.baseUrl + '?id='+id)
     }
-    createUser(product: Object):Observable<any>{
-        return this.http.post(this.baseUrl + '/create',product);
+    createUser(user: Object):Observable<any>{
+        return this.http.post(this.baseUrl + '/create',user);
     }
 }

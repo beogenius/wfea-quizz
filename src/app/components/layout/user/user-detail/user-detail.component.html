@@ -1,1 +1,46 @@
-<p>user-detail works!</p>
+<div class="container-fluid">
+
+<h2>User Details</h2>
+<hr/>
+<div *ngIf="user">
+    <div>
+        <label><b>Id: </b></label> {{user.id}}
+    </div>
+    <div>
+        <label><b>Role: </b></label>
+        <ul *ngFor="let r of user.roles">
+            <li>{{r.name}}</li>
+        </ul>
+    </div>
+    <div>
+        <label><b>User name: </b></label> {{user.username}}
+    </div>
+    <div>
+        <label><b>Password: </b></label> {{user.password}}
+    </div>
+    <div>
+        <label><b>Address: </b></label> {{user.address}}
+    </div>
+    <div>
+        <label><b>Email: </b></label> {{user.email}}
+    </div>
+    <div>
+        <label><b>Birthday: </b></label> {{user.dob}}
+    </div>
+    <div>
+        <label><b>Age: </b></label> {{user.age}}
+    </div>
+    <div>
+        <label><b>Group: </b></label>
+        <ul *ngFor="let g of user.appGroup">
+            <li>{{g.name}}</li>
+        </ul>
+    </div>
+</div>
+
+<br>
+<br>
+<button (click)="goTolist()" class="btn btn-primary">Back to User List</button><br>
+
+
+</div>

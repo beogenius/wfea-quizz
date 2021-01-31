@@ -33,10 +33,11 @@ export class UserComponent implements OnInit {
         this.userService.deleteUser(id).subscribe(res => this.reloadData());
     }
     updateUser(id: any){
-        this.router.navigate(['update',id]);
+        this.router.navigate(['admin/user/update',id]);
     }
     userDetail(id: any){
-        this.router.navigate(['detail',id]);
+        console.log(id);
+        this.router.navigate(['admin/user/detail', id]);
     }
     createUser(){
         this.router.navigateByUrl('/admin/user/create');

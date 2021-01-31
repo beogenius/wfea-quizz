@@ -8,6 +8,8 @@ import {QuestionComponent} from './components/layout/question/question.component
 import {ExamComponent} from './components/layout/exam/exam.component';
 import {createContentChildren} from '@angular/compiler/src/core';
 import {CreateUserComponent} from './components/layout/user/create-user/create-user.component';
+import {UserDetailComponent} from './components/layout/user/user-detail/user-detail.component';
+import {UpdateUserComponent} from './components/layout/user/update-user/update-user.component';
 
 
 const routes: Routes = [
@@ -48,6 +50,14 @@ const routes: Routes = [
             {
                 path: 'user/create',
                 component: CreateUserComponent
+            },
+            {
+                path: 'user/detail/:id',
+                component: UserDetailComponent
+            },
+            {
+                path: 'user/update/:id',
+                component: UpdateUserComponent
             }
         ]
     },

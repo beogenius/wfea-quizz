@@ -32,6 +32,7 @@ import {MatSliderModule} from '@angular/material/slider';
 import { CreateUserComponent } from './components/layout/user/create-user/create-user.component';
 import {UserService} from './service/userService';
 import { UserDetailComponent } from './components/layout/user/user-detail/user-detail.component';
+import { UpdateUserComponent } from './components/layout/user/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { UserDetailComponent } from './components/layout/user/user-detail/user-d
     LoginComponent,
     RegisterComponent,
     CreateUserComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,
