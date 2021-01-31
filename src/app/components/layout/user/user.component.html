@@ -22,7 +22,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let u of userList">
+        <tr *ngFor="let u of userList | filter:filter">
             <th scope="row">{{u.id}}</th>
             <td>
                 <ul *ngFor="let r of u.roles">

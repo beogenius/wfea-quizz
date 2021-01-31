@@ -33,6 +33,7 @@ import { CreateUserComponent } from './components/layout/user/create-user/create
 import {UserService} from './service/userService';
 import { UserDetailComponent } from './components/layout/user/user-detail/user-detail.component';
 import { UpdateUserComponent } from './components/layout/user/update-user/update-user.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter'
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { UpdateUserComponent } from './components/layout/user/update-user/update
     MatMenuModule,
     HttpClientModule,
     MatSliderModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
